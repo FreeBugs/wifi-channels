@@ -1,0 +1,14 @@
+{
+  "name": "wifi-channels",
+  "version": "1.0.0",
+  "description": "Get available Wifi channels by country regulations and device capabilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "author": {
+    "name": "Daniel Arnold",
+    "email": "darnold@darnold.org"
+  },
+  "license": "MIT"
+}
