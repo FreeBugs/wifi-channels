@@ -1,6 +1,6 @@
 {
   "name": "wifi-channels",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get available Wifi channels by country regulations and device capabilities.",
   "main": "wifiChannels.js",
   "scripts": {
