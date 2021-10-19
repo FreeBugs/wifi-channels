@@ -16,9 +16,9 @@ try
     assert(err instanceof Error);
 }
 
-// Should return 6 elements for DE
+// Should return 7 elements for DE (as of 10/2021)
 const permRegionDE = wifiChannels.getPermissions('DE');
-assert.strictEqual(permRegionDE.length, 6);
+assert.strictEqual(permRegionDE.length, 7);
 
 // Is valid band
 assert(wifiChannels.isValidBand('802.11a'));

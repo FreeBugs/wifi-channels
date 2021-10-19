@@ -12,7 +12,7 @@ To run the tests
     
 ## Description
 You can use this module to get a list of Wifi channels that are permitted in a country.
-The data is based on the [linux wireless-regdb][1] as of 2018/May/31.
+The data is based on the [linux wireless-regdb][1] as of 2021/Aug/08.
 
 ## Usage
 ```js
@@ -56,10 +56,23 @@ Returns an array of objects including the following properties:
 | dfs_required | DFS capabilities required (true/false) |
 | no_ir | Do not initiate radiation (true/false) | 
 
+## Updating the database
+Updated json files can be generated using the `utils/update.sh` script. 
+
+Python 3 is required and the jsonpickle module has to be available in your venv,
+install it with `python3 -m pip install jsonpickle`.
+
+Then run 
+```
+./update.sh https://mirrors.edge.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2021.08.28.tar.gz 
+```
+
+This will create a temp directory, extract the data and convert it to the json file.
+
 # LICENSE
 
 The MIT License (MIT)
 
-Copyright (c) 2018 darnold79
+Copyright (c) 2018-2021 Daniel Arnold
 
 [1]: https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb 

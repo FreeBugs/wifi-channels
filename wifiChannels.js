@@ -17,13 +17,13 @@ class WifiChannels {
 
     getDfsRegion(iso2Code) {
         let rec = this.regdb[iso2Code];
-        if (rec === undefined) throw new Error("No record for " + iso2Code + ".");
+        if (!rec) throw new Error("No record for " + iso2Code + ".");
         return this.dfs_regs[rec.dfs_region];
     }
 
     getPermissions(iso2Code) {
         let rec = this.regdb[iso2Code];
-        if (rec === undefined) throw new Error('No record for ' + iso2Code + '.');
+        if (!rec) throw new Error('No record for ' + iso2Code + '.');
         return this.regdb[iso2Code]._permissions;
     }
 
@@ -45,9 +45,9 @@ class WifiChannels {
                         upper: chan.upper,
                         maxbw: perm.freqband.maxbw,
                         maxantgain: perm.power.max_ant_gain,
-                        no_outdoor: ((perm.textflags !== undefined) && (perm.textflags.includes("NO-OUTDOOR"))),
-                        no_ir: ((perm.textflags !== undefined) && (perm.textflags.includes("NO-IR"))),
-                        dfs_required: ((perm.textflags !== undefined) && (perm.textflags.includes("DFS")))
+                        no_outdoor: ((perm.textflags) && (perm.textflags.includes("NO-OUTDOOR"))),
+                        no_ir: ((perm.textflags) && (perm.textflags.includes("NO-IR"))),
+                        dfs_required: ((perm.textflags) && (perm.textflags.includes("DFS")))
                     });
             })
         });
