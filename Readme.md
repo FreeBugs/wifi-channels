@@ -12,7 +12,7 @@ To run the tests
     
 ## Description
 You can use this module to get a list of Wifi channels that are permitted in a country.
-The data is based on the [linux wireless-regdb][1] as of 2021/Aug/08.
+The data is based on the [linux wireless-regdb][1] as of **2022/Aug/12**.
 
 ## Usage
 ```js
